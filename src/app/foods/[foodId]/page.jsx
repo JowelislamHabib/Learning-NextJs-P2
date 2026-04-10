@@ -16,6 +16,7 @@ const FoodDetailPage = async ({ params }) => {
     image_link,
     origin_and_popularity,
     rating,
+    main_ingredients,
   } = FoodData;
   console.log(data.data);
 
@@ -45,6 +46,14 @@ const FoodDetailPage = async ({ params }) => {
       <h1 className="text-info font-bold">
         Eidi Abar khay kara? :
         <span className="text-success">{origin_and_popularity}</span>
+      </h1>
+      <h1 className="text-info font-bold">
+        Banay ki diya :
+        <ul className="text-success m-5">
+          {main_ingredients.map((item, index) => (
+            <li key={index}>• {item}</li>
+          ))}
+        </ul>
       </h1>
       <Link href={"../"}>
         <button className="btn btn-warning">Go Home</button>
