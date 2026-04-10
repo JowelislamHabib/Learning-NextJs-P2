@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-
 const FoodDetailPage = async ({ params }) => {
   const { foodId } = await params;
   const res = await fetch(
@@ -18,6 +18,7 @@ const FoodDetailPage = async ({ params }) => {
     rating,
   } = FoodData;
   console.log(data.data);
+
   return (
     <div>
       <h1 className="text-info font-bold">
@@ -39,12 +40,15 @@ const FoodDetailPage = async ({ params }) => {
             width={400}
             height={400}
           ></Image>
-        </span>{" "}
+        </span>
       </h1>
       <h1 className="text-info font-bold">
         Eidi Abar khay kara? :
-        <span className="text-success">{origin_and_popularity}</span>{" "}
+        <span className="text-success">{origin_and_popularity}</span>
       </h1>
+      <Link href={"../"}>
+        <button className="btn btn-warning">Go Home</button>
+      </Link>
     </div>
   );
 };
