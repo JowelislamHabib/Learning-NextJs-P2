@@ -8,7 +8,7 @@ const FoodsPage = async () => {
   console.log(foodData);
   return (
     <>
-      <div>
+      <div className="w-11/12 mx-auto mb-10 mt-10">
         <h2 className="text-2xl">Total item: {foodData.length} foods</h2>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
