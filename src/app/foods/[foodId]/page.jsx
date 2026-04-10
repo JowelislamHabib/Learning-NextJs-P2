@@ -21,12 +21,12 @@ const FoodDetailPage = async ({ params }) => {
   console.log(data.data);
 
   return (
-    <div>
+    <div className="space-y-5">
       <h1 className="text-info font-bold">
-        Khabeb naki? : <span className="text-success">{dish_name}</span>{" "}
+        Khabeb naki? : <span className="text-success"> {dish_name}</span>{" "}
       </h1>
       <h1 className="text-info font-bold">
-        Dam koto? : <span className="text-success">{price} Taka</span>{" "}
+        Dam koto? : <span className="text-success"> {price} Taka</span>{" "}
       </h1>
       <h1 className="text-info font-bold">
         Rating kemon? :
@@ -45,13 +45,15 @@ const FoodDetailPage = async ({ params }) => {
       </h1>
       <h1 className="text-info font-bold">
         Eidi Abar khay kara? :
-        <span className="text-success">{origin_and_popularity}</span>
+        <span className="text-success"> {origin_and_popularity}</span>
       </h1>
       <h1 className="text-info font-bold">
         Banay ki diya :
-        <ul className="text-success m-5">
+        <ul className="text-error m-5">
           {main_ingredients.map((item, index) => (
-            <li key={index}>• {item}</li>
+            <li className="list-disc" key={index}>
+              {item}
+            </li>
           ))}
         </ul>
       </h1>
